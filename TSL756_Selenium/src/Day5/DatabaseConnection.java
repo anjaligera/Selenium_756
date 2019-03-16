@@ -23,6 +23,7 @@ public class DatabaseConnection {
 		{
 			System.out.println(R.getString(1));
 		System.out.println(R.getString(2));
+		System.out.println("Hi");
 		}
   }
 }
