@@ -1,0 +1,28 @@
+package in.lnt.day1;
+
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+
+import org.apache.poi.xssf.usermodel.XSSFSheet;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+
+public class Write {
+
+	public static void main(String[] args) throws Exception {
+		
+   FileInputStream inFile=new FileInputStream("C:\\Users\\vshadmin\\Desktop\\Book1.xlsx");
+	XSSFWorkbook book=new XSSFWorkbook(inFile);
+		XSSFSheet sheet=book.getSheet("Sheet1");
+		
+		
+		
+		
+		
+FileOutputStream outFile=new FileOutputStream("C:\\Users\\vshadmin\\Desktop\\Book1.xlsx");
+	
+	
+	
+	
+	}
+
+}

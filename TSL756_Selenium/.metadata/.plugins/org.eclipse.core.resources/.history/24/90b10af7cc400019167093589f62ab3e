@@ -1,0 +1,38 @@
+package in.lnt.day1;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
+
+import util.BrowserSetup;
+
+public class TabHandling
+{
+	public static void main(String[] args) 
+	{
+		WebDriver driver = BrowserSetup.browserStart("chrome","http://opensource-demo.orangehrmlive.com/index.php/auth/login");
+		Actions action = new Actions(driver);
+		WebElement search = driver.findElement(By.id("txtUsername"));
+		driver.findElement(By.cssSelector("input#txtUsername")).sendKeys("Admin");
+		driver.findElement(By.cssSelector("input#txtPassword")).sendKeys("admin123");
+		 driver.findElement(By.cssSelector("input[value='LOGIN']")).click();
+		
+		WebElement element = driver.findElement(By.xpath("//*[@id=\"menu_admin_viewAdminModule\"]"));
+		 action.moveToElement(element)
+		 .keyDown(Keys.CONTROL)
+		  .contextClick(element);
+		 //menu_admin_viewAdminModule
+		 
+//		 action.moveToElement(search)
+//		.keyDown(Keys.SHIFT)
+//		.sendKeys(search, "lnt")
+//		.keyUp(Keys.SHIFT)
+		//.doubleClick(search)
+		//.contextClick(search)
+		//.sendKeys(search, Keys.ENTER)
+		//.perform();	
+
+	}
+}

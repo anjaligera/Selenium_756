@@ -1,0 +1,15 @@
+package in.lnt.day1;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.interactions.Actions;
+
+import util.BrowserSetup;
+
+public class Practice {
+
+	public static void main(String[] args) {
+		WebDriver driver = BrowserSetup.browserStart("chrome","http://nseindia.com");
+		Actions action = new Actions(driver);
+	}
+
+}

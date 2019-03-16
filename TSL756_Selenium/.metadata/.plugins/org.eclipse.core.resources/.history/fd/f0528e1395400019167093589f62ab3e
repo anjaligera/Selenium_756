@@ -1,0 +1,17 @@
+package in.lnt.day1;
+
+import org.openqa.selenium.WebDriver;
+
+import util.BrowserSetup;
+
+public class Google 
+{
+
+	public static void main(String[] args) {
+		
+		WebDriver driver = BrowserSetup.browserStart("chrome","http://www.google.com");
+		
+		
+	}
+	
+}

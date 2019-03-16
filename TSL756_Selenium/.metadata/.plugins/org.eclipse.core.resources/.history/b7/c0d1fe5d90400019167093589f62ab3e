@@ -1,0 +1,25 @@
+package util;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class BrowserSetup {
+
+	
+	public static  WebDriver  browserStart(String name) {
+		
+		if(name.equalsIgnoreCase("chrome")) {
+					
+		System.setProperty("webdriver.chrome.driver","Driver\\chromedriver.exe");
+		WebDriver driver= new ChromeDriver();//only parent methods are access
+
+		}
+		else if(name.equalsIgnoreCase("firefox")) {
+			System.setProperty("webdriver.gecko.driver","C:\\Users\\vshadmin\\Desktop\\Jars\\geckodriver.exe");
+			WebDriver driver= new FirefoxDriver();//only parent methods are access	
+			
+		}
+		return driver
+		
+	}
+}

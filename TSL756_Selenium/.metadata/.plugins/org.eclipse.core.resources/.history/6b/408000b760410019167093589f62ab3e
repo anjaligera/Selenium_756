@@ -1,0 +1,38 @@
+package in.lnt.day1;
+
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
+
+import util.BrowserSetup;
+
+public class Practice {
+
+	public static void main(String[] args) {
+		WebDriver driver = BrowserSetup.browserStart("chrome","http://nseindia.com");
+		Actions action = new Actions(driver);
+	
+		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+
+ driver.findElement(By.id("keyword")).sendKeys("Reliance Industries Limited");;
+WebElement E=driver.findElement(By.xpath("//*[text()='Reliance Industries Limited']"));
+ 
+ action.moveToElement(E).click(E).perform();
+ 
+	BrowserSetup.getScreenShot("Reliance Industries Limited");
+
+ driver.findElement(By.id("faceValue"));
+
+		
+		
+		
+
+	
+
+	}
+
+}

@@ -1,0 +1,29 @@
+package in.lnt.day1;
+
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
+
+import util.BrowserSetup;
+
+public class Practice {
+
+	public static void main(String[] args) {
+		WebDriver driver = BrowserSetup.browserStart("chrome","http://nseindia.com");
+		Actions action = new Actions(driver);
+	
+		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+
+		 WebElement search = driver.findElement(By.id("keyword"));
+		action.moveToElement(search);
+		driver.findElement(By.name("companyED")).sendKeys("Reliance Industries Limited");
+		action.moveToElement(search).sendKeys(search, Keys.ENTER).perform();
+
+
+	}
+
+}
